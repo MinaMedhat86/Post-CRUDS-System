@@ -1,0 +1,17 @@
+#update{
+    display: none;
+}
+
+body{
+    color: white;
+   background-image: url(../image/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    font-weight: 600;
+    font-family: 'segoe ui light';
+    letter-spacing: 2px;
+}
+input,textarea{
+    font-weight: 600 !important;
+    letter-spacing: 2px;
+}

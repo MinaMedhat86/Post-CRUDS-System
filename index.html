@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="title text-center my-3">
+        <h1 class=" fw-bolder display-4">CRUD Operations</h1>
+    </div>
+    <div class="container   p-3 my-5  ">
+        <label for="title">post Title</label>
+        <input class="form-control my-3" type="text" id="title" required placeholder="Title ....">
+        <label for="description">description</label>
+        <textarea class="form-control my-3" name="" id="description" cols="30" rows="5" required placeholder="Description ...."></textarea>
+        <label for="price"> price</label>
+        <input class="form-control my-3" type="number" id="price" required placeholder="Price ....">
+        <button id="add" class="btn btn-primary px-5 py-1 position-relative text-white fw-bold start-50 translate-middle-x " onclick="addPost()">Add post</button>
+        <button id="update" class="btn btn-warning px-5 py-1 text-white fw-bold position-relative start-50 translate-middle-x " onclick="updatePost ()">Update post</button>
+    </div>
+    <div class="container my-5 ">
+        <table class="  table table-primary table-group-divider table-responsive-md text-center table-hover">
+            <thead >
+                <th>index</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>price</th>
+                <th>Actions</th>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
