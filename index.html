@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Posts</title>
+    <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    
 </head>
 
 <body>
@@ -24,7 +26,9 @@
         <button id="add" class="btn btn-primary px-5 py-1 position-relative text-white fw-bold start-50 translate-middle-x " onclick="addPost()">Add post</button>
         <button id="update" class="btn btn-warning px-5 py-1 text-white fw-bold position-relative start-50 translate-middle-x " onclick="updatePost ()">Update post</button>
     </div>
+    
     <div class="container my-5 ">
+        <input type="text" id="search" class="mb-3 form-control" oninput="getSearch()" placeholder="Search by Title .....">
         <table class="  table table-primary table-group-divider table-responsive-md text-center table-hover">
             <thead >
                 <th>index</th>

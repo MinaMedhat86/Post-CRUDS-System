@@ -2,7 +2,7 @@
 let postTitle = document.getElementById("title");
 let postDesc = document.getElementById("description");
 let postPrice = document.getElementById("price");
-
+let searchInput = document.getElementById("search"); 
 // ============================== get all data ============================
 let posts =  [];
 async function getPosts() {
@@ -20,8 +20,12 @@ async function getPosts() {
         <td>${posts[index].description}</td>
         <td>${posts[index].price}  </td>
         <td>
-        <button class="btn btn-warning py-1 px-3 text-white fw-bold " onclick="setData(${index})"> Update</button>
-        <button class="btn btn-danger py-1 px-3 text-white fw-bold" onclick = "deletePost(${index})"> Delete</button>
+        <button class="btn btn-warning py-1 px-3 text-white fw-bold " onclick="setData(${index})"> Update
+        <i class="fa-regular fa-pen-to-square"></i>
+        </button>
+        <button class="btn btn-danger py-1 px-3 text-white fw-bold" onclick = "deletePost(${index})"> Delete
+        <i class="fa-solid fa-trash"></i>
+        </button>
         </td>
         
         </tr>
@@ -112,4 +116,42 @@ async function deletePost (index){
     getPosts()
     }
 
+//===================== search =======================
 
+
+
+function getSearch(){
+    let searchArray = [];
+    let box = ``;
+// console.log(searchInput);
+    for (let i = 0; i < posts.length; i++) {
+        if(posts[i].title.toLowerCase().includes(searchInput.value.toLowerCase()) == true){
+            searchArray.push(posts[i])
+        }
+       
+        
+    }
+
+    for (let index = 0; index < searchArray.length; index++) {
+        box += `
+        <tr>
+        <td>${searchArray[index].id}</td>
+        <td>${searchArray[index].title}</td>
+        <td>${searchArray[index].description}</td>
+        <td>${searchArray[index].price}  </td>
+        <td>
+        <button class="btn btn-warning py-1 px-3 text-white fw-bold " onclick="setData(${index})"> Update
+                <i class="fa-regular fa-pen-to-square"></i>
+        </button>
+        <button class="btn btn-danger py-1 px-3 text-white fw-bold" onclick = "deletePost(${index})"> Delete
+        <i class="fa-solid fa-trash"></i>
+        </button>
+        </td>
+        
+        </tr>
+        `
+        
+    }
+    document.getElementById("tbody").innerHTML = box;
+
+}
